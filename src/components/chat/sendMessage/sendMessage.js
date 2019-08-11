@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class SendMessageForm extends React.Component {
+export default class SendMessage extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -25,7 +25,7 @@ export default class SendMessageForm extends React.Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="send-message-form">
+        className="send-message">
         <input
           onChange={this.handleChange}
           value={this.state.message}
