@@ -1,4 +1,5 @@
 import React from "react";
+import "./../../../App.css"
 
 export default class SendMessage extends React.Component {
   constructor() {
@@ -30,6 +31,7 @@ export default class SendMessage extends React.Component {
           onChange={this.handleChange}
           value={this.state.message}
           placeholder="Type your message and hit ENTER"
+          className="input-message"
           type="text" />
       </form>
     )

@@ -1,33 +1,95 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+  width: 5px; /* 1 - вертикальный скроллбар */
+}
+::-webkit-scrollbar:horizontal {
+  height: 5px; /* 1 - горизонтальный скроллбар */
+}
+::-webkit-scrollbar-button {
+  background: #0099cc; /* 2 - кнопка */
+}
+::-webkit-scrollbar-track {
+  background: #0099cc; /* 3 - трек */
+}
+::-webkit-scrollbar-track-piece {
+  background: white; /* 4 – видимая часть трека */
+}
+::-webkit-scrollbar-thumb {
+  background: #0099cc;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* 5 - ползунок */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper-title {
+  height: 50px;
+  width: 100%;
+  background-color: #0099cc;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.message-list {
+  height: calc(100vh - 200px);
+  width: 50%;
+  margin: 0 auto;
+  border: 4px solid #0099cc;
+  border-radius: 8px;
+  overflow: auto;
+  margin-top: 10px;
+}
+
+.input-message {
+  border: 4px solid #0099cc;
+  border-radius: 2px;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.send-message {
+  max-width: 50%;
+  margin: 10px auto;
+}
+
+.my-message {
+  margin-bottom: 10px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.my-message div:nth-child(2) {
+  background-color: #CCFFFF;
+  color:black;
+}
+
+.server-message div:nth-child(2) {
+  background-color: #6600cc;
+}
+
+.server-message {
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.text-message {
+  padding: 10px;
   color: white;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.from-message {
+  font-size: 14px;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.time-message {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.wrapper-message {
+  display: inline-block;
+  max-width: 100%;
+  word-wrap: break-word
 }
