@@ -7,12 +7,12 @@ import "react-notifications-component/dist/theme.css";
 
 const url = "ws://st-chat.shas.tel";
 
-export default class App extends React.Component {
+export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       messages: [],
-      name: "try",
+      name: this.props.user,
       ws: null,
       connect: ""
     };
@@ -35,7 +35,7 @@ export default class App extends React.Component {
       const message = JSON.parse(evt.data);
       this.addMessage(message);
       console.log(message);
-      this.addNotification(message[0].message);
+      this.addNotification(message[0].message, message[0].from);
     };
 
     this.ws.onclose = () => {
@@ -48,9 +48,9 @@ export default class App extends React.Component {
     };
   }
 
-  addNotification(msg) {
+  addNotification(msg, from) {
     this.notificationDOMRef.current.addNotification({
-      title: "message",
+      title: from,
       message: msg,
       type: "success",
       insert: "bottom",
@@ -79,7 +79,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header connect={this.state.connect}/>
+        <Header connect={this.state.connect} logOut={this.props.logout}/>
         <MessageList messages={this.state.messages} name={this.state.name}/>
         <SendMessage sendMessage={this.sendMessage} />
         <ReactNotification ref={this.notificationDOMRef} />

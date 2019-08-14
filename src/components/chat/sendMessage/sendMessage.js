@@ -30,7 +30,7 @@ export default class SendMessage extends React.Component {
         <input
           onChange={this.handleChange}
           value={this.state.message}
-          placeholder="Type your message and hit ENTER"
+          placeholder="Type your message"
           className="input-message"
           type="text" />
       </form>
