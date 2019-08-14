@@ -4,8 +4,14 @@ import Header from "./header/header";
 import SendMessage from "./sendMessage/sendMessage";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
+import ReconnectingWebSocket from 'reconnecting-websocket';
+
 
 const url = "ws://st-chat.shas.tel";
+const urlProvider = async () => {
+  // const token = await getSessionToken();
+  return `${url}`;
+};
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -22,7 +28,7 @@ export default class Main extends React.Component {
     
   }
 
-  ws = new WebSocket(url);
+  ws = new ReconnectingWebSocket(urlProvider);
   componentDidMount() {
     this.ws.onopen = () => {
       this.setState({
@@ -44,7 +50,7 @@ export default class Main extends React.Component {
       this.setState({
         connect: "disconnected",
         ws: new WebSocket(url)
-      });
+      });      
     };
   }
 
