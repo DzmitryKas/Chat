@@ -19,12 +19,16 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* 5 - ползунок */
 }
 
-.wrapper-title {
+.wrapper-header {
   height: 50px;
   width: 100%;
   background-color: #0099cc;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Arial;
+  font-weight: 600;
+  color: #333366;
 }
 
 .message-list {
@@ -92,4 +96,40 @@ li {
   display: inline-block;
   max-width: 100%;
   word-wrap: break-word
+}
+
+.wrapper-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #CCFFFF;
+}
+
+.title-login-form {
+  font-family: Arial;
+  font-weight: 600;
+  color: #333366;
+}
+
+.nickname {
+  border: 4px solid #0099cc;
+  border-radius: 2px; 
+  -webkit-appearance: none;
+}
+
+body {
+  background-color: #FFFAFA;
+}
+
+.log-out {
+  padding: 8px;
+  border: none;
+  font: inherit;
+  color: white;
+  background-color: #333366;  
+  border-radius: 20px;
+  font-family: Arial;
+  font-weight: 400;
+  
 }

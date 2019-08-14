@@ -3,13 +3,13 @@ import "./../../../App.css";
 
 export default function Header(props) {
   return (
-    <div className="wrapper-title">
-      <div >
-        <p className="title">chat by Dmitry Kasptrovich</p>
-        <p>{props.connect}</p>
+    <div className="wrapper-header">
+      <div className="wrapper-title">
+        <p className="title">Hello {props.name}!</p>        
       </div>
-      <div>
-        <button onClick={props.logOut}>Log out</button>
+      <p>{props.connect}</p>
+      <div className="button-logout">
+        <button className="log-out"onClick={props.logOut}>Log out</button>
       </div>
     </div>
   );

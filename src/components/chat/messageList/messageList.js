@@ -12,7 +12,7 @@ export default class MessageList extends React.Component {
     return (
       <ul className="message-list">
         {this.props.messages.map(message => {
-          console.log("message", message);
+          console.log("message11", message);
           return (
             <li
               key={message[0].id}
