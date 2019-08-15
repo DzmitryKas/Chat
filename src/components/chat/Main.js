@@ -5,7 +5,7 @@ import SendMessage from "./sendMessage/sendMessage";
 import ReconnectingWebSocket from "reconnecting-websocket";
 import notifyMe from "./messageList/notification";
 
-const url = "ws://st-chat.shas.tel";
+const url = "wss://wssproxy.herokuapp.com/";
 const urlProvider = async () => {
   return `${url}`;
 };
