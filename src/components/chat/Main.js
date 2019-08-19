@@ -33,17 +33,15 @@ export default class Main extends React.Component {
 
     this.ws.onmessage = evt => {
       const message = JSON.parse(evt.data);
-      this.addMessage(message);
-
-      if (typeof document.hidden !== "undefined") {
+      this.addMessage(message);      
+      if (document.visibilityState === 'hidden') {        
         notifyMe(message[0].message, message[0].from);
       }
     };
 
     this.ws.onclose = () => {
       this.setState({
-        connect: "offline",
-        ws: new WebSocket(url)
+        connect: "offline",        
       });
     };
   }
